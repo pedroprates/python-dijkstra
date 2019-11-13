@@ -1,3 +1,3 @@
 # Dijkstra on Python 2.0
 
-An attempt to implement the Dijkstra Algorithm on Python 2.0 using a Minimum Heap (to perform on O(|V + E| log N))
+An attempt to implement the Dijkstra Algorithm on Python 2.0 using a Minimum Heap
