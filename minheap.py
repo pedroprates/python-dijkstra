@@ -54,3 +54,6 @@ class MinHeap:
         self.__heapify(0)
 
         return item
+
+    def empty(self):
+        return len(self.heap) == 0
