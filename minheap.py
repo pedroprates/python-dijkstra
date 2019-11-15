@@ -23,12 +23,9 @@ class MinHeap:
         return (i * 2) + 2
 
     def __sort_heap(self):
-        i = len(self.shape)
+        i = len(self.heap) - 1
 
-        while (i > 0):
-            if self.heap[self.__parent(i)] >= self.heap[i]:
-                break
-            
+        while (i != 0) and (self.heap[self.__parent(i)] > self.heap[i]):
             self.heap[self.__parent(i)], self.heap[i] = self.heap[i], self.heap[self.__parent(i)]
 
     def __heapify(self, i):
@@ -44,11 +41,16 @@ class MinHeap:
             self.heap[i], self.heap[smallest] = self.heap[smallest], self.heap[i]
             self.__heapify(smallest)
 
+    def show(self):
+        for n in self.heap:
+            print(n)
+
     def insert(self, x):
         self.heap.append(x)
         self.__sort_heap()
 
     def remove(self):
         item = self.heap[0]
-        # Check if the remaining heap is valid
         self.__heapify(0)
+
+        return item
